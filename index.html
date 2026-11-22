@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<base href="/love-on-delivery-pitch/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
@@ -3630,7 +3631,7 @@ function frameChart(){
 function pxBoard(){
  const kind=t=>/رومانس/.test(t)?'rom':/طبقي/.test(t)?'cls':/كوميدي/.test(t)?'com':'';
  return '<div class="board">'+D.paradox.map((r,i)=>{
-  const pxImg=IMG_MAP.px[String(i)]?'<div class="px-img"><img src="/love-on-delivery-pitch/vibe_images/'+IMG_MAP.px[String(i)]+'" alt="مفارقة '+esc(r[0])+'" loading="lazy"></div>':'';
+  const pxImg=IMG_MAP.px[String(i)]?'<div class="px-img"><img src="vibe_images/'+IMG_MAP.px[String(i)]+'" alt="مفارقة '+esc(r[0])+'" loading="lazy"></div>':'';
   return '<div class="px '+kind()+'">'+pxImg+'<span class="n">'+esc(r[0])+'</span>'+
   '<div class="t">'+esc(r[1])+'</div>'+
   '<div class="who">يعرف: '+esc(r[2])+' · لا يعرف: '+esc(r[3])+'</div>'+
@@ -3647,7 +3648,7 @@ function charsCards(){
     '</ul></details>':'';
   const live=c.live&&c.live.length?'<details><summary>المشاهد الحيوية</summary><table class="mini">'+
     c.live.map(r=>'<tr>'+r.map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+'</table></details>':'';
-  const img=IMG_MAP.chars[c.id]?'<div class="char-img"><img src="/love-on-delivery-pitch/vibe_images/'+IMG_MAP.chars[c.id]+'" alt="'+esc(c.name)+'" loading="lazy"></div>':'';
+  const img=IMG_MAP.chars[c.id]?'<div class="char-img"><img src="vibe_images/'+IMG_MAP.chars[c.id]+'" alt="'+esc(c.name)+'" loading="lazy"></div>':'';
   return '<article class="char"><div class="top"><h4>'+esc(c.name)+'</h4>'+
    '<span class="no">'+esc(c.id)+'</span></div>'+
    img+
@@ -3682,9 +3683,9 @@ function episodes(){
   const epNum=String(e.n).replace(/[٠-٩]/g,c=>'٠١٢٣٤٥٦٧٨٩'.indexOf(c)).padStart(2,'0');
   const epImgs=IMG_MAP.eps[epNum];
   const sceneGallery=epImgs&&epImgs.scenes.length?'<div class="episode-gallery">'+
-    epImgs.scenes.map(s=>'<img src="/love-on-delivery-pitch/vibe_images/'+s+'" alt="مشهد من الحلقة '+esc(e.n)+'" loading="lazy">').join('')+
+    epImgs.scenes.map(s=>'<img src="vibe_images/'+s+'" alt="مشهد من الحلقة '+esc(e.n)+'" loading="lazy">').join('')+
     '</div>':'';
-  const storyboard=epImgs&&epImgs.storyboard?'<div class="episode-storyboard"><h5>لوحة القصة — ستوري بورد</h5><img src="/love-on-delivery-pitch/vibe_images/'+epImgs.storyboard+'" alt="ستوري بورد الحلقة '+esc(e.n)+'" loading="lazy"></div>':'';
+  const storyboard=epImgs&&epImgs.storyboard?'<div class="episode-storyboard"><h5>لوحة القصة — ستوري بورد</h5><img src="vibe_images/'+epImgs.storyboard+'" alt="ستوري بورد الحلقة '+esc(e.n)+'" loading="lazy"></div>':'';
   return '<section class="ep" id="s-ep-'+esc(e.n)+'"><div class="head"><span class="no">'+esc(e.n)+'</span>'+
    '<h4>'+esc(e.title)+'</h4></div><div class="meta">'+
    e.meta.map(m=>'<span><b>'+esc(m[0])+'</b> '+esc(m[1])+'</span>').join('')+
@@ -3704,7 +3705,7 @@ function placeCards(){
   if(/بارد/.test(w)&&!/دافئ/.test(w))return ' cool';
   return ' mix';};
  return '<div class="cards">'+D.geo.map((r,idx)=>{
-  const locImg=IMG_MAP.locs[String(idx)]?'<div class="loc-img"><img src="/love-on-delivery-pitch/vibe_images/'+IMG_MAP.locs[String(idx)]+'" alt="'+esc(r[1])+'" loading="lazy"></div>':'';
+  const locImg=IMG_MAP.locs[String(idx)]?'<div class="loc-img"><img src="vibe_images/'+IMG_MAP.locs[String(idx)]+'" alt="'+esc(r[1])+'" loading="lazy"></div>':'';
   return '<div class="pcard'+world(r)+'">'+locImg+'<h5>'+esc(r[1])+'</h5>'+
   '<div class="row"><b>المنطقة:</b> '+esc(r[2])+'</div>'+
   '<div class="row"><b>العالم:</b> '+esc(r[3])+'</div>'+
